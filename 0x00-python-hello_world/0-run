@@ -1,2 +1,2 @@
 #!/bin/bash
-pythom3 $PYFILE
+pythom3 ./$PYFILE
