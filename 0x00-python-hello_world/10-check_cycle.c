@@ -23,8 +23,8 @@ int check_cycle(listint_t *list)
 		if (c == r)
 			return (1);
 
-		c = slow->next;
-		r = fast->next->next;
+		c = c->next;
+		r = r->next->next;
 	}
 
 	return (0);
