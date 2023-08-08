@@ -1,5 +1,3 @@
 #!/usr/bin/python3
-alphabet = ""
-for i in range(97,123):
-    alphabet += chr(i)
-print(alphabet)
+for i in range(ord("a"), ord("z") + 1):
+    print("{}.format(i), end="")
