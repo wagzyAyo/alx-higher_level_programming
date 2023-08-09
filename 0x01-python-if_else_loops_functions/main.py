@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-uppercase = __import__('8-uppercase').uppercase
+add = __import__('10-add').add
 
-uppercase("best")
-uppercase("Best School 98 Battery street")
+print(add(1, 2))
+print(add(98, 0))
+print(add(100, -2))
