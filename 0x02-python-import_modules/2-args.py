@@ -2,7 +2,7 @@
 import sys
 length = len(argv)
 for x in sys.argv:
-    return x
+    return argv[x]
 for y in sys.argc:
-    return y
+    return argv[y]
 print("{} argument\n{}: {}\n".format(length, x, y))
