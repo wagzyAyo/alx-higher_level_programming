@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""This module contain function that 
+"""This module contain function that
 print first name and last name"""
 
 
 def say_my_name(first_name, last_name=""):
-    """This function takes two arguments 
+    """This function takes two arguments
     and print them in form of string
 
     Arguments:
