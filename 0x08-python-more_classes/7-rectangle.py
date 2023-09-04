@@ -5,7 +5,7 @@
 class Rectangle:
     """This represents a rectangle"""
     number_of_instances = 0
-    symbol = "#"
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Initializes rectangle class
@@ -66,9 +66,9 @@ class Rectangle:
         for column in range(self.__height):
             for row in range(self.__width):
                 try:
-                    rectangle += str(self.symbol)
+                    rectangle += str(self.print_symbol)
                 except Exception:
-                    rectangle += type(self).symbol
+                    rectangle += type(self).print_symbol
 
             if column < self.__height - 1:
                 rectangle += "\n"
