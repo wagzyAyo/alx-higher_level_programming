@@ -1,16 +1,15 @@
 #!/usr/bin/python3
 """A rectangle class"""
 
+
 class Rectangle:
     """This represents a rectangle"""
 
     def __init__(self, width=0, height=0):
         """Initializes rectangle class
-
         Args:
         width: represents the width of the rectangle
         height: represents the height of the rectangle
-
         raise:
         TypeError :If width and height is not an integer
         ValueError : If width and heigth is less than 0
@@ -31,7 +30,6 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
         self.__width = value
-
 
     @property
     def height(self):
