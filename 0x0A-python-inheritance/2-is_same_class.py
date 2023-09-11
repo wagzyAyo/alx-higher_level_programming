@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """This module return true if an object
 is an instance of specified class,False if
 otherwise"""
