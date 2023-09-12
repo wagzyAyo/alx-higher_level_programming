@@ -6,5 +6,5 @@ that reads and print a  text file"""
 def read_file(filename=""):
     """This function reads a file and print to standard
     output"""
-    with open(filename,encoding="utf-8") as file:
-        print(file.read())
+    with open(filename, encoding="utf-8") as file:
+        print(file.read(), end="")
