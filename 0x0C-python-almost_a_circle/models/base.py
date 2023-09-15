@@ -4,6 +4,7 @@
 
 class Base:
     """The class Base"""
+    __nb_objects = 0
     def __init__(self, id=None):
         """Initializing the base class"""
         __nb_objects = 0
@@ -11,4 +12,4 @@ class Base:
             self.id = id
         else:
             Base.__nb_objects += 1
-            id = Base.__nb_objects
+            self.id = Base.__nb_objects
