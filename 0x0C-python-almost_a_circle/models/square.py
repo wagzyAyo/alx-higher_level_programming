@@ -7,7 +7,7 @@ class Square(Rectangle):
     """The square class"""
     def __init__(self, size, x=0, y=0, id=None):
         """initializing the square class"""
-        super().__init__(size, x, y, id)
+        super().__init__(size, size , x, y, id)
         self.size = size
         self.x = x
         self.y = y
@@ -30,5 +30,5 @@ class Square(Rectangle):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-        self.height = value
+        self.__height = value
 
