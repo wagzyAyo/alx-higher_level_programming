@@ -76,9 +76,14 @@ class Rectangle(Base):
         return (self.__height * self.__width)
 
     def display(self):
+        """Prints # on row and coumn"""
         for row in range(self.__height):
             print(" ", end="")
             for column in range(self.__width):
                 print("#", end="")
             print()
 
+    def __str__(self):
+        """overriding string method"""
+        return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} -
+        {self.__width/self.__height}")
