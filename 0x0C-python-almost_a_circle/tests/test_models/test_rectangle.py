@@ -1,6 +1,12 @@
 #!/usr/bin/python3
 """Test for rectangle class"""
 import unittest
+from contextlib import redirect_stdout
+import inspect
+import io
+import os
+import sys
+from io import StringIO
 from models.rectangle import Rectangle
 from models.base import Base
 
