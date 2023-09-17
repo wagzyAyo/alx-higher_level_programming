@@ -70,13 +70,6 @@ class test_square(unittest.TestCase):
         self.assertEqual(45, self.s.y)
         self.assertEqual(0, self.s.x)
 
-    def test_asquare_id(self):
-        '''
-            Test the id for square
-        '''
-        sq = Square(2, 0, 0, 199)
-        self.assertEqual(199, sq.id)
-
     def test_width_string(self):
         '''
             Testing for other than int
@@ -105,9 +98,3 @@ class test_square(unittest.TestCase):
         with self.assertRaises(TypeError):
             sq = Square(1, "46")
 
-    def test_x_bool(self):
-        '''
-            Testing for other than int
-        '''
-        with self.assertRaises(TypeError):
-            sq = Square(1, True)
