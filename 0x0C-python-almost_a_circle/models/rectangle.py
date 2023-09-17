@@ -90,3 +90,11 @@ class Rectangle(Base):
         """overriding string method"""
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - \
         {self.__width}/{self.__height}")
+
+
+    def to_dictionary(self):
+        """This method returns a dictionary representation
+        of rectangle class"""
+        rect_dictionary = {'id': self.id, 'width': self.__width, 'height': self.__height, 'x': self.__x,
+                'y':self.__y}
+        return rect_dictionary
