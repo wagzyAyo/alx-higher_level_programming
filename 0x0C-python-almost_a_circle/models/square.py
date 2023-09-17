@@ -7,7 +7,7 @@ class Square(Rectangle):
     """The square class"""
     def __init__(self, size, x=0, y=0, id=None):
         """initializing the square class"""
-        super().__init__(size, size , x, y, id)
+        super().__init__(size, size, x, y, id)
         self.size = size
         self.x = x
         self.y = y
@@ -30,7 +30,7 @@ class Square(Rectangle):
         if value <= 0:
             raise ValueError("width must be > 0")
         self.__width = value
-        self.__height = valiue
+        self.__height = value
 
     def update(self, *args, **kwargs):
         """This method updates attribute
@@ -38,8 +38,8 @@ class Square(Rectangle):
 
         if args is not None and len(args) != 0:
             if len(args) >= 1:
-                if (type(args) != int and args[0] is not None:
-                        raise TypeError("id must be an integer")
+                if (type(args) != int and args[0] is not None):
+                    raise TypeError("id must be an integer")
                 self.id = args[0]
 
             if len(args) > 1:
@@ -52,23 +52,22 @@ class Square(Rectangle):
                 self.y = args[3]
 
         else:
-        for key, value in kwargs.items():
-            if key == 'id':
-                if type(value) != int and value is not None:
-                    raise ValueError("id must be an integer")
-                self.id = value
+            for key, value in kwargs.items():
+                if key == 'id':
+                    if type(value) != int and value is not None:
+                        raise ValueError("id must be an integer")
+                    self.id = value
 
-            if key == "size":
-                self.size = value
-            if key == 'x':
-                self.x = value
-            if key == 'y':
-                self.y = value
-
-
+                if key == "size":
+                    self.size = value
+                if key == 'x':
+                    self.x = value
+                if key == 'y':
+                    self.y = value
 
     def to_dictionary(self):
         """Return the dictionary representation
         of square"""
-        sq_dictionary = {'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y}
+        sq_dictionary = {'id': self.id, 'x': self.x, 'size': self.size,
+                         'y': self.y}
         return sq_dictionary
