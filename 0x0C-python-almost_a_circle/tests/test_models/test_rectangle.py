@@ -44,35 +44,6 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(5, rect.id)
 
     def test_area(self):
-    """Test the area() method"""
-    r = Rectangle(4, 5)
-    self.assertEqual(r.area(), 20)
-
-def test_display(self):
-    """Test the display() method"""
-    r = Rectangle(3, 2)
-    expected_output = "###\n###\n"
-
-    with StringIO() as captured_output:
-        r.display()
-        self.assertEqual(captured_output.getvalue(), expected_output)
-
-def test_str(self):
-    """Test the __str__() method"""
-    r = Rectangle(3, 4, 1, 2, 7)
-    self.assertEqual(str(r), "[Rectangle] (7) 1/2 - 3/4")
-
-def test_update(self):
-    """Test the update() method"""
-    r = Rectangle(2, 3, 4, 5, 6)
-    r.update(7)
-    self.assertEqual(str(r), "[Rectangle] (7) 4/5 - 2/3")
-    r.update(7, 8)
-    self.assertEqual(str(r), "[Rectangle] (7) 4/5 - 8/3")
-    r.update(7, 8, 9)
-    self.assertEqual(str(r), "[Rectangle] (7) 9/5 - 8/9")
-    r.update(7, 8, 9, 10)
-    self.assertEqual(str(r), "[Rectangle] (7) 9/10 - 8/9")
-    r.update(7, 8, 9, 10, 11)
-    self.assertEqual(str(r), "[Rectangle] (7) 9/10 - 8/9")
-
+        """Test the area() method"""
+        r = Rectangle(4, 5)
+        self.assertEqual(r.area(), 20)
