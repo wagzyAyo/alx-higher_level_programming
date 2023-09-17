@@ -15,22 +15,22 @@ class Rectangle(Base):
     @property
     def width(self):
         """Get the value for width"""
-        self.__width
+        return self.__width
 
     @property
     def height(self):
         """get vthe value for height"""
-        self.__height
+        return self.__height
 
     @property
     def x(self):
         """get value of x"""
-        self.__x
+        return self.__x
 
     @property
     def y(self):
         """get the value for y"""
-        self.__y
+        return self.__y
 
     @width.setter
     def width(self, value):
