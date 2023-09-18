@@ -88,7 +88,7 @@ class Base:
                     csv_format = ["id", "width", "height", "x", "y"]
                 else:
                     csv_format = ["id", "size", "x", "y"]
-                    data = DictWriter(csv_file, fieldnames=csv_format)
+                    data = csv.DictWriter(csv_file, fieldnames=csv_format)
                     for item in list_objs:
                         data.writerow(item.to_dictionary())
 
