@@ -102,8 +102,8 @@ class Base:
             else:
                 csv_format = ["id", "size", "x", "y"]
                 dict_list = csv.DictReader(csv_file, fieldnames=csv_format)
-                dict_list = [dict([key, int(value)] for key, value in x.items())
-                             for x in dict_list]
+                dict_list = [dict([key, int(value)] for key, value in
+                                  x.items()) for x in dict_list]
                 return [cls.create(**x) for x in dict_list]
 
     @staticmethod
