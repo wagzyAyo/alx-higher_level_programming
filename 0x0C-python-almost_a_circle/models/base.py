@@ -16,7 +16,7 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-   
+
     @staticmethod
     def to_json_string(list_dictionaries):
         """returns json representation of list_dictionaries"""
@@ -72,4 +72,22 @@ class Base:
                 list_dictionaries = cls.from_json_string(my_str)
                 for dictionary in list_dictionaries:
                     list_of_instances.append(cls.create(**dictionary))
-        return list_of_instances
+        return list_of_instancesi
+
+    def save_to_file_csv(cls, list_objs):
+        """serializing list_objs and save as csv file"""
+        file_name = cls.__name__ + ".csv"
+        with open(file_name, mode="w", newline="") as csv_file:
+            if list_objs is None or list_objs == []:
+                csv_file.write("[]")
+            else:
+                if cls.__name__ == 'Rectangle':
+                    csv_format = ["id", "width", "height", "x", "y"]
+                else:
+                    csv_format = ["id", "size", "x", "y"]
+                    data = DictWriter(csv_file, fieldnames=csv_format)
+                    for item in list_objs:
+                        data.writerow(item.to_dictionary())
+
+
+
