@@ -58,7 +58,7 @@ class Base:
         val.update(**dictionary)
         return val
 
-     @classmethod
+    @classmethod
     def load_from_file(cls):
         """Returns a list of instances"""
 
