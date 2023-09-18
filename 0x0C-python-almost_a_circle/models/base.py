@@ -94,13 +94,13 @@ class Base:
     @classmethod
     def load_from_file_csv(cls):
         """Deserializes csv format from a file"""
-        file_name = cls.__name__ + ".cs"
+        file_name = cls.__name__ + ".csv"
         with open(file_name, newline="") as csv_file:
             if cls.__name__ == 'Rectangle':
                     csv_format = ["id", "width", "height", "x", "y"]
-                else:
-                    csv_format = ["id", "size", "x", "y"]
-                    dict_list = csv.DictReader(csv_file, fieldnames=csv_format)
-                    dict_list = [dict(key, int(value), for key and value in x.items())
-                            for x in dict_list]
-                    return [cls.create(**x) for x in dict_list]
+            else:
+                csv_format = ["id", "size", "x", "y"]
+                dict_list = csv.DictReader(csv_file, fieldnames=csv_format)
+                dict_list = [dict([key, int(value)] for key, value in x.items())
+                        for x in dict_list]
+                return [cls.create(**x) for x in dict_list]
