@@ -8,11 +8,11 @@ class Rectangle(Base):
 
     def __init__(self, width, height, x=0, y=0, id=None):
         """initializing new attribute for rectangle class"""
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -55,7 +55,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """set the value for x"""
-        if (value < 0):
+        if (type(value) is not int):
             raise ValueError("x must be >= 0")
         self.__x = value
 
