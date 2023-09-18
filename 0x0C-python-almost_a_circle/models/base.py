@@ -24,7 +24,7 @@ class Base:
         """returns json representation of list_dictionaries"""
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        return  json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
@@ -74,7 +74,7 @@ class Base:
                 list_dictionaries = cls.from_json_string(my_str)
                 for dictionary in list_dictionaries:
                     list_of_instances.append(cls.create(**dictionary))
-        return list_of_instancesi
+        return list_of_instances
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
@@ -98,12 +98,12 @@ class Base:
         file_name = cls.__name__ + ".csv"
         with open(file_name, newline="") as csv_file:
             if cls.__name__ == 'Rectangle':
-                    csv_format = ["id", "width", "height", "x", "y"]
+                csv_format = ["id", "width", "height", "x", "y"]
             else:
                 csv_format = ["id", "size", "x", "y"]
                 dict_list = csv.DictReader(csv_file, fieldnames=csv_format)
                 dict_list = [dict([key, int(value)] for key, value in x.items())
-                        for x in dict_list]
+                             for x in dict_list]
                 return [cls.create(**x) for x in dict_list]
 
     @staticmethod
@@ -117,7 +117,7 @@ class Base:
         window = turtle
         tim = turtle.Turtle()
         tim.pensize(3)
-        tim.shape(turtle)
+        tim.shape("turtle")
 
         for rect in list_rectangles:
             tim.showturtle()
@@ -132,6 +132,7 @@ class Base:
             tim.hideturtle()
 
         timmy = turtle.Turtle()
+        timmy.pensize(4)
         timmy.color("#b5e3d8")
         for squ in list_squares:
             timmy.showturtle()
@@ -143,8 +144,6 @@ class Base:
                 timmy.left(90)
                 timmy.forward(squ.height)
                 timmy.left(90)
-            timmy.hidetutle()
+            timmy.hideturtle()
 
         window.exitonclick()
-
-
