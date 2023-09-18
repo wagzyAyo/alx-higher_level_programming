@@ -51,7 +51,7 @@ class Base:
         """returns an instance with all attributes already set"""
         if cls.__name__ == 'Rectangle':
             val = cls(1, 1)
-        elif cls.__name__ = 'Square':
+        elif cls.__name__ == 'Square':
             val = cls(1)
 
         val.update(**dictionary)
