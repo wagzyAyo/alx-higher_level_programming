@@ -88,9 +88,9 @@ class Base:
                     csv_format = ["id", "width", "height", "x", "y"]
                 else:
                     csv_format = ["id", "size", "x", "y"]
-                    data = csv.DictWriter(csv_file, fieldnames=csv_format)
-                    for item in list_objs:
-                        data.writerow(item.to_dictionary())
+                data = csv.DictWriter(csv_file, fieldnames=csv_format)
+                for item in list_objs:
+                    data.writerow(item.to_dictionary())
 
     @classmethod
     def load_from_file_csv(cls):
@@ -101,10 +101,10 @@ class Base:
                 csv_format = ["id", "width", "height", "x", "y"]
             else:
                 csv_format = ["id", "size", "x", "y"]
-                dict_list = csv.DictReader(csv_file, fieldnames=csv_format)
-                dict_list = [dict([key, int(value)] for key, value in
-                                  x.items()) for x in dict_list]
-                return [cls.create(**x) for x in dict_list]
+            dict_list = csv.DictReader(csv_file, fieldnames=csv_format)
+            dict_list = [dict([key, int(value)] for key, value in
+                              x.items()) for x in dict_list]
+            return [cls.create(**x) for x in dict_list]
 
     @staticmethod
     def draw(list_rectangles, list_squares):
