@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-let myC = 'C is fun';
+const myC = 'C is fun';
 const myPython = 'Python is cool';
 const myJavascript = 'JavaScript is amazing';
 
