@@ -11,14 +11,13 @@ if __name__ == "__main__":
     password = sys.argv[2]
     my_db = sys.argv[3]
     name_searched = sys.argv[4]
-    query = 'SELECT * FROM states WHERE name = %s \
-            ;', (name_searched)
+    query = 'SELECT * FROM states WHERE name = %s ;'
 
     db = MySQLdb.connect(host='localhost', port=3306,
                          user=username, passwd=password, db=my_db)
 
     cursor = db.cursor()
-    cursor.execute(query)
+    cursor.execute(query, (name_searched))
     searched = cursor.fetchall()
 
     for item in searched:
