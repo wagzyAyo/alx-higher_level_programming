@@ -7,13 +7,12 @@ import sys
 
 
 if __name__ == "__main__":
-    city_db = MySQLdb.connect(user = sys.argv[1], passwd = sys.argv[2]
-            host = 'localhost', port = 3306, db = sys.argv[3])
+    city_db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2]
+                              host='localhost', port=3306, db=sys.argv[3])
 
     cursor = city_db.cursor()
     cursor.execute('SELECT cities.name, cities.id, states.name \
-            FROM cities JOIN states ON cities.states_id ORDER BY \
-            cities.id ASC')
+            FROM cities JOIN states ON cities.states_id = states.id;')
 
     cities = cursor.fetchall()
 
