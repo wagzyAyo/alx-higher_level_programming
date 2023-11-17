@@ -11,8 +11,8 @@ if __name__ == "__main__":
     password = sys.argv[2]
     my_db = sys.argv[3]
     name_searched = sys.argv[4]
-    query = 'SELECT * FROM states WHERE %s LIKE BINARY \
-            ORDER BY id ASC'.format(name_searched)
+    query = 'SELECT * FROM states WHERE name = %s \
+            ;', (name_searched)
 
     db = MySQLdb.connect(host='localhost', port=3306,
                          user=username, passwd=password, db=my_db)
