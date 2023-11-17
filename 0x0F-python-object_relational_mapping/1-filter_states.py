@@ -15,7 +15,8 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
-    query = 'SELECT * FROM states WHERE name LIKE"N_%" ORDER BY id;'
+    query = 'SELECT * FROM states WHERE name LIKE BINARY "N%" \
+            ORDER BY id;'
 
     db = MySQLdb.connect(
         user=username,
