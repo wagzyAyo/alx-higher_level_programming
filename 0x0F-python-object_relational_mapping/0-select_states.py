@@ -16,10 +16,9 @@ if __name__ == "__main__":
     password = sys.argv[2]
     db_name = sys.argv[3]
 
-    db_query = 'SELECT * FROM states ORDER BY id ASC;'
+    db_query = 'SELECT * FROM states;'
 
     db = MySQLdb.connect(
-        host='localhost',
         port=3306,
         user=username,
         passwd=password,
@@ -34,5 +33,3 @@ if __name__ == "__main__":
     for row in fetch:
         print(row)
 
-        cursor.close()
-        db.close()
