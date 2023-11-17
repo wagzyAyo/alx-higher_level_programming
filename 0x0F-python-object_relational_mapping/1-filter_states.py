@@ -15,10 +15,7 @@ if __name__ == "__main__":
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
-    query = 'SELECT * FROM states WHERE name \
-            CONVERT(`name` USING Latin1) \
-            COLLATE Latin1_General_CS \
-            LIKE"N%";'
+    query = 'SELECT * FROM states WHERE name LIKE"N%" ORDER BY id;'
 
     db = MySQLdb.connect(
         user=username,
