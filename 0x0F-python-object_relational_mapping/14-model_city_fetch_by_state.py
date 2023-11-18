@@ -14,10 +14,12 @@ if __name__ == "__main__":
                            pool_pre_ping=True)
 
     Session = sessionmaker(bind=engine)
-    session = Session()
-    data = session.query(City, State).join(State)
 
-    for city, state in data.all():
+    session = Session()
+
+    data = session.query(City, State).filter(State.id == City.state_id).all()
+
+    for city, state in data:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
 
     session.commit()
