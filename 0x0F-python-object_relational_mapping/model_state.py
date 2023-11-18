@@ -9,6 +9,7 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+
 class State(Base):
     """Class with the attributes of id and name
     for every instance of state"""
