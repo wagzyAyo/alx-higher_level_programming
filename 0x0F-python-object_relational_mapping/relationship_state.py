@@ -12,9 +12,9 @@ Base = declarative_base()
 
 
 class State(Base):
-    """Class with the attributes of id and name
+    """Class with the attributes of id and namei
     for every instance of state"""
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True, unique=True)
     name = Column(String(128), nullable=False,)
-    ciities = relationship('City', backref='state', cascade='all, delete')
+    cities = relationship('City', backref='states', cascade='all, delete')
